@@ -13,11 +13,11 @@ class Polynomial {
 public:
     Polynomial(int degree, const double coefficients[]);
 
-//    Polynomial(const Polynomial &that);
-//
+    Polynomial(const Polynomial &that);
+
 //    Polynomial(Polynomial &&that);
 //
-//    ~Polynomial();
+    ~Polynomial();
 
 // Polinom fokszáma
     int degree() const;
@@ -25,8 +25,8 @@ public:
 // Polinom értéke a megadott pontban
     double evaluate(double x) const;
 //
-//// Polinom deriváltja
-//    Polynomial derivative() const;
+// Polinom deriváltja
+    Polynomial derivative() const;
 //
 //    double operator[](int index) const;
 //

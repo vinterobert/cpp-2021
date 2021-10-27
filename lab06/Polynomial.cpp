@@ -8,18 +8,22 @@ Polynomial::Polynomial(int degree, const double *coefficients) {
     }
 }
 
-//Polynomial::Polynomial(const Polynomial &that) {
-//
-//
-//}
+Polynomial::Polynomial(const Polynomial &that) {
+    this->capacity = that.capacity;
+    this->coefficients = new double [capacity];
+    for (int i = 0; i < this->capacity; ++i) {
+        this->coefficients[i] = that.coefficients[i];
+    }
+}
 
 //Polynomial::Polynomial(Polynomial &&that) {
 //
 //}
 
-//Polynomial::~Polynomial() {
-//
-//}
+Polynomial::~Polynomial() {
+    this->capacity = 0;
+    delete[] this->coefficients;
+}
 
 int Polynomial::degree() const {
     return this->capacity - 1;
@@ -41,7 +45,7 @@ double Polynomial::evaluate(double x0) const {
 }
 
 //Polynomial Polynomial::derivative() const {
-//    return Polynomial(0, nullptr);
+//    return
 //}
 
 //double Polynomial::operator[](int index) const {
