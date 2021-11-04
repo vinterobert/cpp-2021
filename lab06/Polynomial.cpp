@@ -31,7 +31,7 @@ int Polynomial::degree() const {
 
 ostream &operator<<(ostream &out, const Polynomial &what) {
     for (int i = 0; i < what.capacity ; ++i) {
-        out<< what.coefficients[i] << "";
+        out<< what.coefficients[i] << " ";
     }
     return out;
 }

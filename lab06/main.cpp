@@ -9,6 +9,9 @@ int main() {
     cout<< p1 << endl;
     cout<<"P1(0)="<<p1.evaluate(0)<<endl;
     cout<<"P1(1)="<<p1.evaluate(1)<<endl;
+    cout<<"P2(2)="<<p1.evaluate(2)<<endl;
+    Polynomial p2 = p1;
+    cout<< p2 << endl;
     return 0;
 }
 
