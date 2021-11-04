@@ -3,16 +3,25 @@
 
 
 #include <iostream>
+
 using namespace std;
+
 class Account {
 public:
-    explicit Account(double balance=0);
-    void deposit( double amount);
+    explicit Account(double balance = 0);
+
+    void deposit(double amount);
+
     bool withdraw(double amount);
+
     int getId() const;
+
     double getBalance() const;
-    void print(ostream& os) const;
-    friend ostream& operator<<(ostream& os, const Account& account);
+
+    void print(ostream &os) const;
+
+    friend ostream &operator<<(ostream &os, const Account &account);
+
 private:
     static int counter;
     int id; //generated field
