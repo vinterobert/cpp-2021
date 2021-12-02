@@ -11,11 +11,20 @@
 
 using namespace std;
 
-class Manager: public Alkalmazott{
+class Manager : public Alkalmazott {
 public:
-    Manager(const string vezetekNev, const string keresztNev, int szuletesiEv);
+    Manager(const string vezetekNev, const string keresztNev, int szuletesiEv, string munkakor);
+
+    void addAlkalmazott(Alkalmazott* alkalmazott);
+
+    void deleteAlkalmazott(int id);
+
+    virtual void print(ostream &os) const;
+
+    int beosztottakSzama() const;
 
 protected:
+    static const string MANAGER_MUNKAKOR;
     vector<Alkalmazott *> beosztottak;
 
 };

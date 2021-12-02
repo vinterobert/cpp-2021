@@ -22,7 +22,7 @@ Alkalmazott::Alkalmazott(const string vezetekNev, const string keresztNev, int s
 void Alkalmazott::print(ostream &os) const {
     os << "id: " << this->getId() << endl;
     Szemely::print(os);
-    os << this->munkakor;
+    os << this->munkakor << endl;
 }
 
 
