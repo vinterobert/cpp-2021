@@ -7,8 +7,8 @@
 using namespace std;
 
 int main() {
-    Szemely sz1("Nagy","Istvan",1998);
+    Szemely sz1("Nagy","Istvan",1999);
     cout << sz1;
-    Alkalmazott a1("Kiss", "Pista", 1999, "sport");
-    cout<< a1;
+    Alkalmazott a1("Kiss","Ervin",1995,"edzo");
+    cout << a1;
 }

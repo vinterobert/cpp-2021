@@ -21,7 +21,7 @@ public:
 protected:
     string munkakor;
     int id;
-    static int counter;
+    static int counter;//id generalasra
 };
 
 
