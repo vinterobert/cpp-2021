@@ -20,6 +20,7 @@ public:
     virtual void print(ostream &os) const;
 
     friend ostream &operator<<(ostream &os, const Szemely &szemely);
+
 };
 
 

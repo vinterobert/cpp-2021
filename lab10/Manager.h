@@ -17,6 +17,7 @@ public:
 
     void addAlkalmazott(Alkalmazott* alkalmazott);
 
+
     void deleteAlkalmazott(int id);
 
     virtual void print(ostream &os) const;

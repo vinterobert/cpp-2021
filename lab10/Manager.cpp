@@ -22,6 +22,7 @@ void Manager::deleteAlkalmazott(int id) {
     }
 }
 
+
 void Manager::print(ostream &os) const {
     os << "Manager " << this->id << " " << this->vezetekNev << " " << this->keresztNev << " beosztottjai:" << endl;
     Alkalmazott::print(os);
