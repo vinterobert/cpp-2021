@@ -6,7 +6,7 @@
 #define CPP_2021_ORDEREDLIST_H
 
 #include <iostream>
-
+#include <functional>
 
 using namespace std;
 
@@ -41,22 +41,6 @@ public:
 //    bool isEmpty() {
 //        if();
 //    }
-    void insert(T &value) {
-        Node *newNode = new Node(value);
-        ++numElements;
-        if (first == nullptr) {//ures lista
-            first = newNode;
-            return;
-        }
-        if(LessComp()(value,first->value)){//Elso elem ele kell beszurni
-            newNode->next = first;
-            first = newNode;
-        }
-        Node *prev = nullptr;
-        Node *act = first;
-        first = newNode;
-        numElements++;
-    }
 
     void listItems(ostream &os) const {
         Node *it = first;
@@ -66,10 +50,36 @@ public:
         }
     }
 
-    friend ostream &operator<<(ostream &os, const OrderedList &list) {
-        list.listItems(os);
-        return os;
+//    friend ostream &operator<<(ostream &os, const OrderedList &list) {
+//        list.listItems(os);
+//        return os;
+//    }
+
+    void insert(T elem);
+};
+
+template<class T, class LessComp, class Equal>
+void OrderedList<T, LessComp, Equal>::insert(T elem) {
+    Node *newNode = new Node(elem);
+    ++this->numElements;
+    if (!first) {//ures lista
+        first = newNode;
+        return;
     }
+    if (LessComp()(elem, first->value)) {//Elso elem ele kell beszurni
+        newNode->next = first;
+        first = newNode;
+        return;
+    }
+    //beszuras ket elem koze vagy vegere
+    Node *prev = nullptr;
+    Node *act = first;
+    while (act != nullptr && LessComp()(act->value, elem)) {
+        prev = act;
+        act = act->next;
+    }
+    prev->next = newNode;
+    newNode->next = act;
 };
 
 
